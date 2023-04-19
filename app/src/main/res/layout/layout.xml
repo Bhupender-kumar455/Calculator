@@ -8,6 +8,7 @@
     android:background="@color/buttonBackground">
 
     <TextView
+        android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:background="@color/tvDisplay"
@@ -164,7 +165,7 @@
             android:layout_height="70dp"            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:layout_margin="5dp"
-            android:onClick="onDigitClick"
+            android:onClick="onClear"
             android:text="@string/clr" />
         <Button
             android:id="@+id/btnAdd"
