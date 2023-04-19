@@ -1,6 +1,8 @@
 package com.example.calculator
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,32 +17,9 @@ import com.example.calculator.ui.theme.CalculatorTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            CalculatorTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.layout)
+    }
+        fun onDigitClick(view: View){
+            Toast.makeText(this,"button clicked",Toast.LENGTH_LONG).show()
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CalculatorTheme {
-        Greeting("Android")
-    }
 }
