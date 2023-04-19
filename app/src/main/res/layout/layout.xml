@@ -174,7 +174,7 @@
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
-            android:text="+" />
+            android:text="@string/add" />
 
     </LinearLayout>
     <LinearLayout
@@ -185,11 +185,20 @@
         <Button
             android:id="@+id/btnEqual"
             android:layout_width="0dp"
+
             android:onClick="onDigitClick"
             android:layout_height="70dp"            android:layout_weight="2"
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
-            android:text="=" />
+            android:text="@string/equalTo" />
+        <Button
+            android:id="@+id/btnDot"
+            android:layout_width="0dp"
+            android:onClick="onDecimalPoint"
+            android:layout_height="70dp"            android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:background="@color/tvDisplay"
+            android:text="@string/dot" />
 
 
 

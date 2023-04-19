@@ -15,4 +15,7 @@
     <string name="_4">4</string>
     <string name="clr">CLR</string>
     <string name="_0">0</string>
+    <string name="dot">.</string>
+    <string name="equalTo">=</string>
+    <string name="add">+</string>
 </resources>
