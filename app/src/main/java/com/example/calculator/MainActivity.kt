@@ -4,17 +4,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.calculator.ui.theme.CalculatorTheme
+import java.lang.ArithmeticException
+
 
 class MainActivity : ComponentActivity() {
     private var tvInput :TextView?=null
@@ -50,8 +42,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
-
     private fun isOperatorAdded(value:String):Boolean{
         return if(value.startsWith("-")){
             false
@@ -61,6 +51,33 @@ class MainActivity : ComponentActivity() {
                     || value.contains("*")
                     ||value.contains("+")
                     ||value.contains("-")
+        }
+    }
+    fun onEqual(view: View){
+        if(lastNumeric){
+            var tvValue = tvInput?.text.toString()
+            var prefix = ""
+
+            try {
+                if(prefix.startsWith("-")) {
+                    prefix = "-"
+                    tvValue = tvValue.substring(1)
+                }
+                if(tvValue.contains("-")){
+                    val splitValue = tvValue.split("-")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    var result = one.toDouble()-two.toDouble()
+                    tvInput?.text = result.toString()
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                }
+
+
+            }catch (e:ArithmeticException){
+                e.printStackTrace()
+            }
         }
     }
 }
