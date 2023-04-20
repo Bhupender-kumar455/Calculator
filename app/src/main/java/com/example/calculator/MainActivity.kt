@@ -33,6 +33,12 @@ class MainActivity : ComponentActivity() {
         lastDot = true
       }
     }
+    private fun removeZeroAfterDot(result:String):String{
+        var value = result
+        if(result.contains(".0"))
+                value = result.substring(0,result.length-2)
+            return  value
+    }
     fun onOperator(view: View){
         tvInput?.text?.let {
             if(lastNumeric && !isOperatorAdded(it.toString())){
@@ -67,11 +73,42 @@ class MainActivity : ComponentActivity() {
                     val splitValue = tvValue.split("-")
                     var one = splitValue[0]
                     var two = splitValue[1]
-                    var result = one.toDouble()-two.toDouble()
-                    tvInput?.text = result.toString()
                     if(prefix.isNotEmpty()){
                         one = prefix + one
                     }
+                    tvInput?.text =removeZeroAfterDot ((one.toDouble()-two.toDouble()).toString())
+
+                } else if(tvValue.contains("+")){
+                    val splitValue = tvValue.split("+")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    tvInput?.text =removeZeroAfterDot ( (one.toDouble() + two.toDouble()).toString())
+
+                }
+                else if(tvValue.contains("/")){
+                    val splitValue = tvValue.split("/")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+
+                    tvInput?.text =removeZeroAfterDot (( one.toDouble() / two.toDouble() ).toString())
+
+                }
+                else if(tvValue.contains("*")){
+                    val splitValue = tvValue.split("*")
+                    var one = splitValue[0]
+                    var two = splitValue[1]
+                    if(prefix.isNotEmpty()){
+                        one = prefix + one
+                    }
+                    tvInput?.text = removeZeroAfterDot((one.toDouble() * two.toDouble()).toString())
+
                 }
 
 
