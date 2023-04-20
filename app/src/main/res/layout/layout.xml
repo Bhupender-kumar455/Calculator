@@ -11,12 +11,13 @@
         android:id="@+id/tvInput"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@color/tvDisplay"
-        android:padding="10dp"
-        android:textSize="45sp"
-        android:text="@string/calc_text"
+        android:background="@color/textViewColor"
         android:gravity="end|bottom"
-    />
+        android:padding="10dp"
+        android:text="@string/calc_text"
+        android:textColor="@color/operatorColor"
+        android:textColorHint="@color/textViewColor"
+        android:textSize="45sp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +38,8 @@
         <Button
             android:id="@+id/btnEight"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
             android:layout_margin="5dp"
@@ -46,19 +48,24 @@
         <Button
             android:id="@+id/btnNine"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
             android:layout_margin="5dp"
             android:text="@string/_9" />
+
         <Button
             android:id="@+id/btnDivide"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
-            android:background="@color/tvDisplay"
-            android:onClick="onDigitClick"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
-            android:text="@string/divide" />
+            android:layout_weight="1"
+            android:background="@color/operatorColor"
+            android:onClick="onOperator"
+            android:text="@string/divide"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -72,13 +79,15 @@
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:text="@string/_4" />
 
         <Button
             android:id="@+id/btnFive"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
             android:layout_margin="5dp"
@@ -88,18 +97,23 @@
             android:id="@+id/btnSix"
             android:layout_width="0dp"
             android:background="@color/tvDisplay"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:onClick="onDigitClick"
             android:layout_margin="5dp"
             android:text="@string/_6" />
+
         <Button
             android:id="@+id/btnMultiply"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
-            android:background="@color/tvDisplay"
-            android:onClick="onDigitClick"
-            android:text="@string/multiply" />
+            android:layout_weight="1"
+            android:background="@color/operatorColor"
+            android:onClick="onOperator"
+            android:text="@string/multiply"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -111,7 +125,8 @@
             android:id="@+id/btnOne"
             android:layout_width="0dp"
             android:onClick="onDigitClick"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:layout_margin="5dp"
             android:text="@string/_1" />
@@ -119,7 +134,8 @@
         <Button
             android:id="@+id/btnTwo"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
@@ -128,19 +144,24 @@
         <Button
             android:id="@+id/btnThree"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
             android:text="@string/_3" />
+
         <Button
             android:id="@+id/btnSubtract"
             android:layout_width="0dp"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
-            android:layout_height="70dp"            android:layout_weight="1"
-            android:background="@color/tvDisplay"
-            android:onClick="onDigitClick"
-            android:text="@string/subtract" />
+            android:layout_weight="1"
+            android:background="@color/operatorColor"
+            android:onClick="onOperator"
+            android:text="@string/subtract"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -154,7 +175,8 @@
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:onClick="onDigitClick"
-            android:layout_height="70dp"            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_weight="2.1"
             android:text="@string/_0" />
 
 
@@ -162,19 +184,24 @@
         <Button
             android:id="@+id/btnCLR"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:layout_weight="1"
             android:background="@color/tvDisplay"
             android:layout_margin="5dp"
             android:onClick="onClear"
             android:text="@string/clr" />
+
         <Button
             android:id="@+id/btnAdd"
             android:layout_width="0dp"
-            android:layout_height="70dp"            android:layout_weight="1"
+            android:layout_height="70dp"
             android:layout_margin="5dp"
-            android:background="@color/tvDisplay"
-            android:onClick="onDigitClick"
-            android:text="@string/add" />
+            android:layout_weight="1"
+            android:background="@color/operatorColor"
+            android:onClick="onOperator"
+            android:text="@string/add"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
     </LinearLayout>
     <LinearLayout
@@ -187,7 +214,8 @@
             android:layout_width="0dp"
 
             android:onClick="onDigitClick"
-            android:layout_height="70dp"            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_weight="2"
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:text="@string/equalTo" />
@@ -195,7 +223,8 @@
             android:id="@+id/btnDot"
             android:layout_width="0dp"
             android:onClick="onDecimalPoint"
-            android:layout_height="70dp"            android:layout_weight="2"
+            android:layout_height="70dp"
+            android:layout_weight="2"
             android:layout_margin="5dp"
             android:background="@color/tvDisplay"
             android:text="@string/dot" />

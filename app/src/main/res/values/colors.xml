@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="tvDisplay">#f8edeb</color>
-    <color name="buttonBackground">#f8edeb</color>
+    <color name="tvDisplay">#d6ccc2</color>
+    <color name = "operatorColor">#ffdf7d17</color>
+    <color name="buttonBackground">#002B36</color>
+    <color name = "textViewColor">#073642</color>
 </resources>
